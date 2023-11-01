@@ -17,10 +17,10 @@ let questions = [
     },
     {
         "question": "Warum wurde Pluto der Planetenstatus aberkannt?",
-        "answer_1": "Er wurde von einem schwarzen Loch verschluckt",
-        "answer_2": "Er wurde von einem anderen Planeten aus der Umlaufbahn und dem Sonnensystem geworfen",
-        "answer_3": "Er wurde der Kategorie Zwergplanet zugeordnet",
-        "answer_4": "Er ist mit einem anderen Planeten kollidiert",
+        "answer_1": "Er wurde von einem schwarzen Loch verschluckt.",
+        "answer_2": "Er wurde von einem anderen Planeten aus der Umlaufbahn und dem Sonnensystem geworfen.",
+        "answer_3": "Er wurde der Kategorie Zwergplanet zugeordnet.",
+        "answer_4": "Er ist mit einem anderen Planeten kollidiert.",
         "right_answer": "3"
     },
     {
@@ -47,4 +47,4 @@ let questions = [
         "answer_4": "Erde",
         "right_answer": "1"
     }
-]
+];
