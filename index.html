@@ -18,7 +18,7 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="init()">
     <div class="head">
         <h1>SpaceQuiz</h1>
     </div>
@@ -31,15 +31,21 @@
                 <div class="card-body-top">
                     <h3 class="card-title">Card title</h3>
                 </div>
+
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                    <li class="list-group-item">A third item</li>
+                    <li class="list-question">An item</li>
+                    <li class="list-question">A second item</li>
+                    <li class="list-question">A third item</li>
+                    <li class="list-question">A third item</li>
                 </ul>
+
                 <div class="card-body-bottom">
+                    <span>
+                        <b>1</b> von <b>5</b> Fragen
+                    </span>
                     <button type="button" class="btn btn-primary">Weiter</button>
                 </div>
+
             </div>
         </div>
     </div>
