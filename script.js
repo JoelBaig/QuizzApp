@@ -35,5 +35,19 @@ function answer(selection) {
 
 function nextQuestion() {
     currentQuestion++;
-    init();
+    document.getElementById('next-question-btn').disabled = true;
+    resetAnswerButtons();
+    showQuestion();
+    showAnswer();
+}
+
+function resetAnswerButtons() {
+    document.getElementById('answer_1').classList.remove('bg-danger');
+    document.getElementById('answer_1').classList.remove('bg-success');
+    document.getElementById('answer_2').classList.remove('bg-danger');
+    document.getElementById('answer_2').classList.remove('bg-success');
+    document.getElementById('answer_3').classList.remove('bg-danger');
+    document.getElementById('answer_3').classList.remove('bg-success');
+    document.getElementById('answer_4').classList.remove('bg-danger');
+    document.getElementById('answer_4').classList.remove('bg-success');
 }
