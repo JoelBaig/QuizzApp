@@ -7,16 +7,19 @@ function init() {
 }
 
 function showQuestion() {
-    let question = questions[currentQuestion];
-    document.getElementById('question-text').innerHTML = question['question'];
-}
+    if (currentQuestion >= questions.length) {
+        document.getElementById('card').classList.add('d-none');
+        document.getElementById('end-screen').classList.remove('d-none');
+    } else {
+        let question = questions[currentQuestion];
 
-function showAnswer() {
-    let answer = questions[currentQuestion];
-    document.getElementById('answer_1').innerHTML = answer['answer_1'];
-    document.getElementById('answer_2').innerHTML = answer['answer_2'];
-    document.getElementById('answer_3').innerHTML = answer['answer_3'];
-    document.getElementById('answer_4').innerHTML = answer['answer_4'];
+        document.getElementById('question-number').innerHTML = currentQuestion + 1;
+        document.getElementById('question-text').innerHTML = question['question'];
+        document.getElementById('answer_1').innerHTML = question['answer_1'];
+        document.getElementById('answer_2').innerHTML = question['answer_2'];
+        document.getElementById('answer_3').innerHTML = question['answer_3'];
+        document.getElementById('answer_4').innerHTML = question['answer_4'];
+    }
 }
 
 function answer(selection) {
@@ -38,7 +41,6 @@ function nextQuestion() {
     document.getElementById('next-question-btn').disabled = true;
     resetAnswerButtons();
     showQuestion();
-    showAnswer();
 }
 
 function resetAnswerButtons() {

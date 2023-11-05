@@ -29,12 +29,13 @@ body {
 }
 
 .card {
-    width: 50vw;
+    width: 20vw;
+    border-radius: 3px;
 }
 
 .card-img-top {
     height: 40vh;
-    object-fit: cover;
+    object-fit: contain;
     background-color: black;
 }
 
@@ -76,7 +77,8 @@ ul {
     padding: 8px;
     margin-bottom: 16px;
     margin-top: 16px;
-    border: solid;
+    border: 1px solid;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -87,4 +89,62 @@ ul {
 .bg-succes,
 .bg-danger {
     color: white;
+}
+
+.d-none {
+    display: none;
+}
+
+.start-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+    width: 50%;
+    background-color: black;
+    color: lightgoldenrodyellow;
+    border-radius: 3px;
+    border-color: 1px solid white;
+    text-align: center;
+    background-image: url(img/spacewalks.png);
+    background-position: inherit;
+    background-size: 40%;
+    background-repeat: no-repeat;
+}
+
+.end-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+    background-color: white;
+    color: lightgoldenrodyellow;
+    border-radius: 3px;
+    border-color: 1px solid white;
+    text-align: center;
+    height: 80vh;
+    width: 50%;
+    background-image: url(img/eclipse.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.trophy {
+    width: 20%;
+}
+
+.head-end-screen {
+    padding-top: 64px;
+}
+
+.end-screen-headline {
+    font-size: 48px;
+}
+
+.end-screen-txt {
+    font-size: 24px;
+    padding: 32px;
 }

@@ -28,7 +28,12 @@
         <img class="bgr-img" src="img/astronaut.jpg" alt="">
 
         <div class="card-main">
-            <div class="card">
+
+            <div class="start-screen d-none">
+                <button class="btn btn-primary">Start Quiz!</button>
+            </div>
+
+            <div id="card" class="card">
                 <img src="img/questionmark_black.jpg" class="card-img-top" alt="...">
                 <div class="card-body-top">
                     <div id="question-text" class="card-title">Card title</div>
@@ -43,12 +48,27 @@
 
                 <div class="card-body-bottom">
                     <span>
-                        <b>1</b> von <b id="question-counter"></b> Fragen
+                        <b id="question-number"></b> von <b id="question-counter"></b> Fragen
                     </span>
-                    <button id="next-question-btn" disabled onclick="nextQuestion()" type="button" class="btn btn-primary">Weiter</button>
+                    <button id="next-question-btn" disabled onclick="nextQuestion()" type="button"
+                        class="btn btn-primary">Weiter</button>
                 </div>
 
             </div>
+
+            <div id="end-screen" class="end-screen d-none">
+                <img class="trophy" src="img/award.png" alt="trophy">
+
+                <div class="head-end-screen">
+                    <p class="end-screen-headline">Herzlichen Glückwunsch!</p>
+                    <p class="end-screen-txt">Du hast <b id=""></b> von <b>6</b> Fragen richtig beantwortet.</p>
+
+                    <div class="btn-pos">
+                        <button class="btn btn-primary">Neustart</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
