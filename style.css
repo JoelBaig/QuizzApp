@@ -29,7 +29,7 @@ body {
 }
 
 .card {
-    width: 20vw;
+    width: 30vw;
     border-radius: 3px;
 }
 
@@ -45,7 +45,6 @@ body {
 }
 
 .card-body-top {
-    text-align: center;
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 16px;
@@ -73,7 +72,6 @@ ul {
 .list-answer {
     display: flex;
     justify-content: center;
-    text-align: center;
     padding: 8px;
     margin-bottom: 16px;
     margin-top: 16px;
@@ -106,7 +104,6 @@ ul {
     color: lightgoldenrodyellow;
     border-radius: 3px;
     border-color: 1px solid white;
-    text-align: center;
     background-image: url(img/spacewalks.png);
     background-position: inherit;
     background-size: 40%;
@@ -118,12 +115,10 @@ ul {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 50vh;
     background-color: white;
     color: lightgoldenrodyellow;
     border-radius: 3px;
     border-color: 1px solid white;
-    text-align: center;
     height: 80vh;
     width: 50%;
     background-image: url(img/eclipse.jpg);
@@ -147,4 +142,8 @@ ul {
 .end-screen-txt {
     font-size: 24px;
     padding: 32px;
+}
+
+.text-center {
+    text-align: center;
 }

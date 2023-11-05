@@ -1,18 +1,20 @@
 let currentQuestion = 0;
+let rightQuestions = 0;
 
 function init() {
     document.getElementById('question-counter').innerHTML = questions.length;
-    showQuestion();
-    showAnswer();
 }
 
 function showQuestion() {
     if (currentQuestion >= questions.length) {
         document.getElementById('card').classList.add('d-none');
         document.getElementById('end-screen').classList.remove('d-none');
+        document.getElementById('question-amount').innerHTML = questions.length;
+        document.getElementById('right-questions-amount').innerHTML = rightQuestions;
     } else {
         let question = questions[currentQuestion];
-
+        document.getElementById('start-screen').classList.add('d-none');
+        document.getElementById('card').classList.remove('d-none');
         document.getElementById('question-number').innerHTML = currentQuestion + 1;
         document.getElementById('question-text').innerHTML = question['question'];
         document.getElementById('answer_1').innerHTML = question['answer_1'];
@@ -29,6 +31,7 @@ function answer(selection) {
 
     if (selectedQuestionNumber == question['right_answer']) {
         document.getElementById(selection).classList.add('bg-success');
+        rightQuestions++;
     } else {
         document.getElementById(selection).classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).classList.add('bg-success');

@@ -29,21 +29,21 @@
 
         <div class="card-main">
 
-            <div class="start-screen d-none">
-                <button class="btn btn-primary">Start Quiz!</button>
+            <div id="start-screen" class="start-screen text-center">
+                <button onclick="showQuestion()" class="btn btn-primary">Starte Quiz!</button>
             </div>
 
-            <div id="card" class="card">
+            <div id="card" class="card d-none">
                 <img src="img/questionmark_black.jpg" class="card-img-top" alt="...">
-                <div class="card-body-top">
+                <div class="card-body-top text-center">
                     <div id="question-text" class="card-title">Card title</div>
                 </div>
 
                 <ul class="list-group list-group-flush">
-                    <li onclick="answer('answer_1')" id="answer_1" class="list-answer">An item</li>
-                    <li onclick="answer('answer_2')" id="answer_2" class="list-answer">A second item</li>
-                    <li onclick="answer('answer_3')" id="answer_3" class="list-answer">A third item</li>
-                    <li onclick="answer('answer_4')" id="answer_4" class="list-answer">A third item</li>
+                    <li onclick="answer('answer_1')" id="answer_1" class="list-answer text-center">An item</li>
+                    <li onclick="answer('answer_2')" id="answer_2" class="list-answer text-center">A second item</li>
+                    <li onclick="answer('answer_3')" id="answer_3" class="list-answer text-center">A third item</li>
+                    <li onclick="answer('answer_4')" id="answer_4" class="list-answer text-center">A third item</li>
                 </ul>
 
                 <div class="card-body-bottom">
@@ -56,15 +56,15 @@
 
             </div>
 
-            <div id="end-screen" class="end-screen d-none">
+            <div id="end-screen" class="end-screen text-center d-none">
                 <img class="trophy" src="img/award.png" alt="trophy">
 
                 <div class="head-end-screen">
-                    <p class="end-screen-headline">Herzlichen Glückwunsch!</p>
-                    <p class="end-screen-txt">Du hast <b id=""></b> von <b>6</b> Fragen richtig beantwortet.</p>
+                    <p class="end-screen-headline">Quiz Beendet!</p>
+                    <p class="end-screen-txt">Du hast <b id="right-questions-amount"></b> von <b id="question-amount"></b> Fragen richtig beantwortet.</p>
 
                     <div class="btn-pos">
-                        <button class="btn btn-primary">Neustart</button>
+                        <button onclick="nextQuestion();" class="btn btn-primary">Neustart</button>
                     </div>
                 </div>
             </div>
