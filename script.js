@@ -12,6 +12,11 @@ function showQuestion() {
         document.getElementById('question-amount').innerHTML = questions.length;
         document.getElementById('right-questions-amount').innerHTML = rightQuestions;
     } else {
+        let percent = (currentQuestion + 1) / questions.length;
+        percent = Math.round(percent * 100);
+        document.getElementById('progress-bar').innerHTML = `${percent}%`;
+        document.getElementById('progress-bar').style = `width: ${percent}%`;
+
         let question = questions[currentQuestion];
         document.getElementById('start-screen').classList.add('d-none');
         document.getElementById('card').classList.remove('d-none');

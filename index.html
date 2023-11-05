@@ -30,16 +30,21 @@
         <div class="card-main">
 
             <div id="start-screen" class="start-screen text-center">
-                <button onclick="showQuestion()" class="btn btn-primary">Starte Quiz!</button>
+                <button onclick="showQuestion()" class="btn btn-primary">Quiz Starten!</button>
             </div>
 
             <div id="card" class="card d-none">
                 <img src="img/questionmark_black.jpg" class="card-img-top" alt="...">
-                <div class="card-body-top text-center">
-                    <div id="question-text" class="card-title">Card title</div>
+
+                <div class="progress" role="progressbar">
+                    <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
                 </div>
 
-                <ul class="list-group list-group-flush">
+                <div class="card-body-top text-center">
+                    <div id="question-text" class="card-title"></div>
+                </div>
+
+                <ul class="list-group card-ul list-group-flush">
                     <li onclick="answer('answer_1')" id="answer_1" class="list-answer text-center">An item</li>
                     <li onclick="answer('answer_2')" id="answer_2" class="list-answer text-center">A second item</li>
                     <li onclick="answer('answer_3')" id="answer_3" class="list-answer text-center">A third item</li>
@@ -61,7 +66,8 @@
 
                 <div class="head-end-screen">
                     <p class="end-screen-headline">Quiz Beendet!</p>
-                    <p class="end-screen-txt">Du hast <b id="right-questions-amount"></b> von <b id="question-amount"></b> Fragen richtig beantwortet.</p>
+                    <p class="end-screen-txt">Du hast <b id="right-questions-amount"></b> von <b
+                            id="question-amount"></b> Fragen richtig beantwortet.</p>
 
                     <div class="btn-pos">
                         <button onclick="nextQuestion();" class="btn btn-primary">Neustart</button>
