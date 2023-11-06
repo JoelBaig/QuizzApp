@@ -32,7 +32,7 @@ let questions = [
         "right_answer": "4"
     },
     {
-        "question": "Welcher Planet unseres Sonnensystems hat die meisten Monde?",
+        "question": "Welcher Planet hat die meisten Monde?",
         "answer_1": "Jupiter",
         "answer_2": "Saturn",
         "answer_3": "Uranus",
