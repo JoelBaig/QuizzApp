@@ -15,7 +15,12 @@ function showQuestion() {
         updateProgressBar();
         updateToNextQuestion();
     }
+    playBackgroundAudio();
+}
+
+function playBackgroundAudio() {
     audio_atmosphere.play();
+    audio_atmosphere.loop = true;
 }
 
 function gameIsOver() {
