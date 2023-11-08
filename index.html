@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuizzApp</title>
 
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
     <script src="script.js"></script>
     <script src="json.js"></script>
 
@@ -33,31 +35,52 @@
             </div>
 
             <div id="card" class="card d-none">
-                <img src="img/questionmark_black.jpg" class="card-img-top" alt="...">
+                <div class="questionmark-img-con">
+                    <img src="img/questionmark_black.jpg" class="card-img-top" alt="...">
+                </div>
 
                 <div class="progress" role="progressbar">
                     <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
                 </div>
 
-                <div class="card-body-top text-center">
-                    <div id="question-text" class="card-title"></div>
+                <div>
+                    <div class="card-content">
+                        <div class="card-body-top text-center">
+                            <div id="question-text" class="card-title"></div>
+                        </div>
+
+                        <div class="margin-card-bottom">
+                            <div class="ul-center">
+                                <ul class="list-group card-ul list-group-flush">
+                                    <li onclick="answer('answer_1')" id="answer_1" class="list-answer text-center">An
+                                        item
+                                    </li>
+                                    <li onclick="answer('answer_2')" id="answer_2" class="list-answer text-center">A
+                                        second
+                                        item
+                                    </li>
+                                    <li onclick="answer('answer_3')" id="answer_3" class="list-answer text-center">A
+                                        third
+                                        item
+                                    </li>
+                                    <li onclick="answer('answer_4')" id="answer_4" class="list-answer text-center">A
+                                        third
+                                        item
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="card-body-bottom">
+                                <span>
+                                    <b id="question-number"></b> von <b id="question-counter"></b> Fragen
+                                </span>
+                                <button id="next-question-btn" disabled onclick="nextQuestion()" type="button"
+                                    class="btn btn-primary">Weiter</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <ul class="list-group card-ul list-group-flush">
-                    <li onclick="answer('answer_1')" id="answer_1" class="list-answer text-center">An item</li>
-                    <li onclick="answer('answer_2')" id="answer_2" class="list-answer text-center">A second item</li>
-                    <li onclick="answer('answer_3')" id="answer_3" class="list-answer text-center">A third item</li>
-                    <li onclick="answer('answer_4')" id="answer_4" class="list-answer text-center">A third item</li>
-                </ul>
-
-                <div class="card-body-bottom">
-                    <span>
-                        <b id="question-number"></b> von <b id="question-counter"></b> Fragen
-                    </span>
-                    <button id="next-question-btn" disabled onclick="nextQuestion()" type="button"
-                        class="btn btn-primary">Weiter</button>
-                </div>
-
             </div>
 
             <div id="end-screen" class="end-screen text-center d-none">

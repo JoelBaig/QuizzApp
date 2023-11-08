@@ -1,6 +1,39 @@
-@media(max-width: 390) {
+@media(max-width: 700px) {
+    .card {
+        min-height: 80vh;
+    }
+}
+
+@media(max-width: 625px) {
     .card {
         width: 100%;
+        height: 100% !important;
+    }
+
+    .end-screen {
+        width: 100%;
         height: 100%;
+        border-radius: 0;
+    }
+
+    .ul-center {
+        position: relative;
+        top: 30px;
+    }
+}
+
+@media(max-width: 375px) {
+    .card-img-top {
+        height: 18vh;
+    }
+
+    .card-img-top {
+        height: 28vh;
+    }
+}
+
+@media(max-width:300px) {
+    body {
+        display: none;
     }
 }

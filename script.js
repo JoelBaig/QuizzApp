@@ -1,8 +1,8 @@
 let currentQuestion = 0;
 let rightQuestions = 0;
-let AUDIO_SUCCESS = new Audio('audio/success.mp3');
-let AUDIO_MISS = new Audio('audio/miss.mp3');
-let AUDIO_ATMOSPHERE = new Audio('audio/atmosphere.mp3');
+let audio_success = new Audio('audio/success.mp3');
+let audio_fail = new Audio('audio/miss.mp3');
+let audio_atmosphere = new Audio('audio/atmosphere.mp3');
 
 function init() {
     document.getElementById('question-counter').innerHTML = questions.length;
@@ -15,7 +15,7 @@ function showQuestion() {
         updateProgressBar();
         updateToNextQuestion();
     }
-    AUDIO_ATMOSPHERE.play();
+    audio_atmosphere.play();
 }
 
 function gameIsOver() {
@@ -56,13 +56,17 @@ function answer(selection) {
     let question = questions[currentQuestion];
     let selectedQuestionNumber = selection.slice(-1);
     let idOfRightAnswer = `answer_${question['right_answer']}`;
+    checkAnswerRightOrWrong(selectedQuestionNumber, question, selection, idOfRightAnswer);
+    disableAnswers();
+    enableNextQuestionBtn();
+}
 
+function checkAnswerRightOrWrong(selectedQuestionNumber, question, selection, idOfRightAnswer) {
     if (rightAnswerSelected(selectedQuestionNumber, question)) {
         showAnswerSuccessed(selection);
     } else {
         showAnswerFailed(idOfRightAnswer, selection);
     }
-    enableNextQuestionBtn();
 }
 
 function rightAnswerSelected(selectedQuestionNumber, question) {
@@ -71,18 +75,32 @@ function rightAnswerSelected(selectedQuestionNumber, question) {
 
 function showAnswerSuccessed(selection) {
     document.getElementById(selection).classList.add('bg-success');
-    AUDIO_SUCCESS.play();
+    audio_success.play();
     rightQuestions++;
 }
 
 function showAnswerFailed(idOfRightAnswer, selection) {
     document.getElementById(selection).classList.add('bg-danger');
     document.getElementById(idOfRightAnswer).classList.add('bg-success');
-    AUDIO_MISS.play();
+    audio_fail.play();
 }
 
 function enableNextQuestionBtn() {
     document.getElementById('next-question-btn').disabled = false;
+}
+
+function disableAnswers() {
+    document.getElementById('answer_1').parentNode.style = 'pointer-events: none';
+    document.getElementById('answer_2').parentNode.style = 'pointer-events: none';
+    document.getElementById('answer_3').parentNode.style = 'pointer-events: none';
+    document.getElementById('answer_4').parentNode.style = 'pointer-events: none';
+}
+
+function enableAnswers() {
+    document.getElementById('answer_1').parentNode.style = 'pointer-events: click';
+    document.getElementById('answer_2').parentNode.style = 'pointer-events: click';
+    document.getElementById('answer_3').parentNode.style = 'pointer-events: click';
+    document.getElementById('answer_4').parentNode.style = 'pointer-events: click';
 }
 
 function nextQuestion() {
@@ -90,6 +108,8 @@ function nextQuestion() {
     disableNextQuestionBtn();
     resetAnswerButtons();
     showQuestion();
+    enableAnswers();
+    init();
 }
 
 function disableNextQuestionBtn() {
