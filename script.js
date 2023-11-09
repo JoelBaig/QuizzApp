@@ -12,7 +12,6 @@ function showQuestion() {
     if (gameIsOver()) {
         showEndScreen();
     } else {
-        updateProgressBar();
         updateToNextQuestion();
     }
     playBackgroundAudio();
@@ -110,6 +109,7 @@ function enableAnswers() {
 
 function nextQuestion() {
     currentQuestion++;
+    updateProgressBar();
     disableNextQuestionBtn();
     resetAnswerButtons();
     showQuestion();
@@ -138,5 +138,11 @@ function restartQuiz() {
     currentQuestion = 0;
     rightQuestions = 0;
     showQuestion();
+    resetProgressBar();
     init();
+}
+
+function resetProgressBar() {
+    document.getElementById('progress-bar').style = '';
+    document.getElementById('progress-bar').innerHTML = `0%`;
 }
